@@ -10,5 +10,5 @@
 using namespace std::chrono;
 using namespace std;
 
-void Brute_force(char* pat, char* txt);
-void Brute_force_Cmp(char* pat, char* txt, long long &cnt_cmp);
+void Brute_force(string pat, string txt);
+void Brute_force_Cmp(string pat, string txt, long long &cnt_cmp);
