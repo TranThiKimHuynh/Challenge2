@@ -3,7 +3,7 @@
 map<string, int> matching_list = {{"-bf", 1}, {"-rk", 2}, {"-kmp", 3}, {"-bm", 4}, {"-tw", 5}};
 map<string, int> outp = {{"-t", 1}, {"-n", 2}, {"-ind", 3}};
 
-double OutTime(int Alg, char *pat, char *txt)
+double OutTime(int Alg, string pat, string txt)
 {
     double time = 0;
     switch (Alg)
@@ -26,7 +26,7 @@ double OutTime(int Alg, char *pat, char *txt)
     }
     return time;
 }
-long long OutCmp(int Alg, char *pat, char *txt)
+long long OutCmp(int Alg, string pat, string txt)
 {
     long long cnt_cmp = 0;
     switch (Alg)
@@ -47,7 +47,7 @@ long long OutCmp(int Alg, char *pat, char *txt)
     }
     return cnt_cmp;
 }
-void OutInfo(int out, int Alg, char *pat, char *txt)
+void OutInfo(int out, int Alg, string pat, string txt)
 {
     switch (out)
     {
@@ -65,29 +65,26 @@ void OutInfo(int out, int Alg, char *pat, char *txt)
         break;
     }
 }
-void readInputF(char *&pat, char *&txt, string ipath ){
+void readInputF(string &pat, string &txt, string ipath ){
     ifstream ifs(ipath);
-    string line1,line2;
-    getline(ifs,line1);
-    pat = line1.data();
+    getline(ifs,pat);
     cout<<pat<<" ";
-    getline(ifs,line2);
-    txt = line2.data();
+    getline(ifs,txt);
     ifs.close();
     cout<<txt<<"\n";
 }
-void Cmd(int argc, char **argv)
+void Cmd(int argc, string *argv)
 {
     int Alg = matching_list[string(argv[1])];
     int out = outp[string(argv[4])];
     string ipath = argv[2];
     string opath = argv[3];
-    char *pat;
-    char *txt;
+    string pat;
+    string txt;
     readInputF(pat,txt,ipath);
     OutInfo(out, Alg, pat, txt);
 }
-int main(int argc, char **argv)
+int main(int argc, string *argv)
 {
     Cmd(argc, argv);
     return 0;
