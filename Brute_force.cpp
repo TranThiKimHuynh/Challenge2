@@ -1,9 +1,9 @@
 #include "Header.h"
 
-void Brute_force_Cmp(char* pat, char* txt, long long &cnt_cmp)
+void Brute_force_Cmp(string pat, string txt, long long &cnt_cmp)
 {
-    int M = strlen(pat);
-    int N = strlen(txt);
+    int M = pat.length();
+    int N = txt.length();
  
     for (int i = 0; ++cnt_cmp && i <= N - M; i++) {
         int j;
@@ -15,10 +15,10 @@ void Brute_force_Cmp(char* pat, char* txt, long long &cnt_cmp)
         
     }
 }
-void Brute_force(char* pat, char* txt)
+void Brute_force(string pat, string txt)
 {
-    int M = strlen(pat);
-    int N = strlen(txt);
+    int M = pat.length();
+    int N = txt.length();
  
     for (int i = 0; i <= N - M; i++) {
         int j;
