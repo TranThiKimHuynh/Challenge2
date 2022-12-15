@@ -73,7 +73,7 @@ void readInputF(string &pat, string &txt, string ipath ){
     ifs.close();
     cout<<txt<<"\n";
 }
-void Cmd(int argc, string *argv)
+void Cmd(int argc, char** argv)
 {
     int Alg = matching_list[string(argv[1])];
     int out = outp[string(argv[4])];
@@ -84,7 +84,7 @@ void Cmd(int argc, string *argv)
     readInputF(pat,txt,ipath);
     OutInfo(out, Alg, pat, txt);
 }
-int main(int argc, string *argv)
+int main(int argc,  char** argv)
 {
     Cmd(argc, argv);
     return 0;
